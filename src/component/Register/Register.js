@@ -1,4 +1,5 @@
 import React from "react";
+import fetch from 'node-fetch';
 
 class Register extends React.Component {
 constructor(props) {

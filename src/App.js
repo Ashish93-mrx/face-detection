@@ -7,6 +7,7 @@ import Rank from './component/Rank/Rank';
 import SignIn from './component/SignIn/SignIn';
 import Register from './component/Register/Register';
 import './App.css';
+import fetch from 'node-fetch';
 
 // const returnClarifaiRequestOptions = (data) => {
 //       ///////////////////////////////////////////////////////////////////////////////////////////////////
