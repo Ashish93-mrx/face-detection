@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Navigation from './component/Navigation/Navigation';
-import FaceRecognition from './component/FaceRecognition/FaceRecognition';
-import Logo from './component/Logo/Logo';
-import ImageLinkForm from './component/ImageLinkForm/ImagLinkFrom'
-import Rank from './component/Rank/Rank';
-import SignIn from './component/SignIn/SignIn';
-import Register from './component/Register/Register';
+import Navigation from './component/Navigation/Navigation.js';
+import FaceRecognition from './component/FaceRecognition/FaceRecognition.js';
+import Logo from './component/Logo/Logo.js';
+import ImageLinkForm from './component/ImageLinkForm/ImagLinkFrom.js'
+import Rank from './component/Rank/Rank.js';
+import SignIn from './component/SignIn/SignIn.js';
+import Register from './component/Register/Register.js';
 import './App.css';
 //import fetch from 'node-fetch';
 
