@@ -153,7 +153,8 @@ onButtonSubmit = () => {
         //.then(response => console.log(response))
         .then(response => {
           this.displayFaceBox(this.calculateFaceLocation(response))
-          
+        })
+        .catch(err => console.log(err));
         if(response){          
           fetch('https://shiv-vfze.onrender.com/image',{
             method:'put',
@@ -168,9 +169,9 @@ onButtonSubmit = () => {
             })
             .catch(err => console.log(err));
           }
-        })
+        
       //.then(response => response.json())
-      .catch(err => console.log(err));
+      
 }    
 
 
