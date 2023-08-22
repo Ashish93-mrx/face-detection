@@ -142,7 +142,7 @@ onButtonSubmit = () => {
     
         //console.log("check");
         //
-        fetch('https://haha-aj1o.onrender.com/imageurl',{
+        fetch('https://shiv-vfze.onrender.com/imageurl',{
             method:'post',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
@@ -155,7 +155,7 @@ onButtonSubmit = () => {
           this.displayFaceBox(this.calculateFaceLocation(response))
           
         if(response){          
-          fetch('https://haha-aj1o.onrender.com/image',{
+          fetch('https://shiv-vfze.onrender.com/image',{
             method:'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
