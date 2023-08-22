@@ -150,7 +150,7 @@ onButtonSubmit = () => {
             })
           })
         .then(response => response.json())
-        //.then(response => console.log(response))
+        .then(response => console.log(response))
         .then(response => {
           this.displayFaceBox(this.calculateFaceLocation(response))
           
