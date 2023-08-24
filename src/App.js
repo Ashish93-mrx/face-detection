@@ -141,7 +141,7 @@ onButtonSubmit = () => {
     //fetch("https://api.clarifai.com/v2/models/" + 'face-detection' + "/outputs", returnClarifaiRequestOptions(this.state.input))
     
         //console.log("check");
-        //
+        
         fetch('https://shiv-vfze.onrender.com/imageurl',{
             method:'post',
             headers: {'Content-type': 'application/json'},
