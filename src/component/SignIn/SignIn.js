@@ -33,7 +33,7 @@ constructor(props) {
         this.props.onRouteChange('home');
       }
     })
-    .catch(err => res.status(400).json(' wrong credentials'));
+    .catch(err => err.status(400).json(' wrong credentials'));
     
   }
 
