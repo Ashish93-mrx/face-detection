@@ -159,7 +159,7 @@ onButtonSubmit = () => {
           })
         //.then(response => console.log(response))
         .then(response => {
-          console.log('parsed JSON response:', response);
+          //console.log('parsed JSON response:', response);
           this.displayFaceBox(this.calculateFaceLocation(response))
 
         if(response){          
