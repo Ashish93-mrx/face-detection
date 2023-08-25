@@ -33,7 +33,12 @@ constructor(props) {
         this.props.onRouteChange('home');
       }
     })
-    .catch(err => err.status(400).json(' wrong credentials'));
+    .catch(err => {
+      console.error(err); // Log the error for debugging
+      // Handle the error appropriately, e.g., display an error message to the user
+      // For example:
+      this.setState({ errorMessage: 'Invalid credentials' });
+  });
   }
 
   render(){
