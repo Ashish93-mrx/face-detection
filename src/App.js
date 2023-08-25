@@ -142,20 +142,28 @@ onButtonSubmit = () => {
     
         //console.log("check");
         
-        fetch('https://shiv-vfze.onrender.com/imageurl',{
+        fetch('shiv-vfze.onrender.com/imageurl',{
             method:'post',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
               input: this.state.input
             })
           })
-        .then(response => response.json())
-        .then(response => console.log(response))
+          .then(response => {
+            // Log the response content before parsing
+            console.log('Response content:', response);
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+            return response.json();
+          })
+        //.then(response => console.log(response))
         .then(response => {
+          console.log('parsed JSON response:', response);
           this.displayFaceBox(this.calculateFaceLocation(response))
-          
+
         if(response){          
-          fetch('https://shiv-vfze.onrender.com/image',{
+          fetch('shiv-vfze.onrender.com/image',{
             method:'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
@@ -168,9 +176,10 @@ onButtonSubmit = () => {
             })
             .catch(err => console.log(err));
           }
+         // this.displayFaceBox(this.calculateFaceLocation(response))
         })
       //.then(response => response.json())
-      .catch(err => console.log(err));
+      .catch(err => console.error('fetch error',err));
 }    
 
 

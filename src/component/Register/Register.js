@@ -24,7 +24,7 @@ onPasswordChange = (event) => {
 }
 
 onSubmitSignIn = () => {
-  fetch('https://shiv-vfze.onrender.com/register',{
+  fetch('shiv-vfze.onrender.com/register',{
     method: 'post',
     headers: {'Content-type':'application/json'},
     body: JSON.stringify({

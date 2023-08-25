@@ -19,7 +19,7 @@ constructor(props) {
   }
 
   onSubmitSignIn = () => {
-    fetch('https://shiv-vfze.onrender.com/signin',{
+    fetch('shiv-vfze.onrender.com/signin',{
       method: 'post',
       headers: {'Content-type':'application/json'},
       body: JSON.stringify({
@@ -33,6 +33,7 @@ constructor(props) {
         this.props.onRouteChange('home');
       }
     })
+    .catch(err => err.status(400).json(' wrong credentials'));
     
   }
 
