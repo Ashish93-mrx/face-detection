@@ -34,7 +34,6 @@ constructor(props) {
       }
     })
     .catch(err => err.status(400).json(' wrong credentials'));
-    
   }
 
   render(){
