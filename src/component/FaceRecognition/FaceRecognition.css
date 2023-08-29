@@ -1,3 +1,17 @@
+/* .bounding-box {
+    position: absolute;
+    box-shadow: 0 0 0 3px #0998f7 inset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    padding: 0px; 
+    margin: 0px; 
+    border: 0px; */
+
+
+/* FaceRecognition.css */
 .bounding-box {
     position: absolute;
     box-shadow: 0 0 0 3px #0998f7 inset;
@@ -5,8 +19,24 @@
     flex-wrap: wrap;
     justify-content: center;
     cursor: pointer;
-    /* background: transparent;
-    padding: 0px; 
-    margin: 0px; 
-    border: 0px; */
-}
+    border: 2px solid #0998f7;
+    background: transparent;
+    box-sizing: border-box;
+  }
+  
+  /* .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .absolute {
+    position: absolute;
+  }
+  
+  .ma {
+    margin: auto;
+  } */
+  

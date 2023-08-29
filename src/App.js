@@ -61,7 +61,7 @@ import './App.css';
 const initialState = {
       input: '',
       imageUrl: '',
-      box: {},
+      box: [],
       route: 'signin',
       isSignedIn: false,
       user: {
@@ -79,7 +79,7 @@ class App extends Component {
     this.state = {
       input: '',
       imageUrl: '',
-      box: {},
+      box: [],
       route: 'signin',
       isSignedIn: false,
       user: {
@@ -112,22 +112,44 @@ loaduser= (data) => {
 
 
 calculateFaceLocation = (data) => {
-  const clarifyFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+  
+
+  // const clarifyFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+
+  // const image = document.getElementById('inputimage');
+  // const width = Number(image.width);
+  // const height = Number(image.height);
+  // return {
+  //    leftcol : clarifyFace.left_col * width,
+  //    toprow : clarifyFace.top_row * height,
+  //    rightcol : width - (clarifyFace.right_col * width),
+  //    bottomrow : height - (clarifyFace.bottom_row * height)
+  // }
+
+  const regions = data.outputs[0].data.regions;
 
   const image = document.getElementById('inputimage');
   const width = Number(image.width);
   const height = Number(image.height);
-  return {
-     leftcol : clarifyFace.left_col * width,
-     toprow : clarifyFace.top_row * height,
-     rightcol : width - (clarifyFace.right_col * width),
-     bottomrow : height - (clarifyFace.bottom_row * height)
-  }
-}
+
+  const faceLocations = regions.map((region) => {
+    const boundingBox = region.region_info.bounding_box;
+
+    return {
+      leftcol : boundingBox.left_col * width,
+      toprow : boundingBox.top_row * height,
+      rightcol : width - (boundingBox.right_col * width),
+      bottomrow : height - (boundingBox.bottom_row * height)
+    };
+  });
+ return faceLocations;
+};
 
 displayFaceBox = (box) => {
   console.log(box);
+  //for(const i=0;i<box.size();i++){
   this.setState({box: box});
+ // }
 }
 
 
@@ -151,7 +173,7 @@ onButtonSubmit = () => {
           })
           .then(response => {
             // Log the response content before parsing
-            console.log('Response content:', response);
+            //console.log('Response content:', response);
             if (!response.ok) {
               throw new Error('Network response was not ok');
           }
