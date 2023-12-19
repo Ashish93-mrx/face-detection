@@ -164,7 +164,7 @@ onButtonSubmit = () => {
     
         //console.log("check");
         
-        fetch('https://shiv-vfze.onrender.com/imageurl',{
+        fetch('https://facedetectx2299.onrender.com/imageurl',{
             method:'post',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
@@ -185,7 +185,7 @@ onButtonSubmit = () => {
           this.displayFaceBox(this.calculateFaceLocation(response))
 
         if(response){          
-          fetch('https://shiv-vfze.onrender.com/image',{
+          fetch('https://facedetectx2299.onrender.com/image',{
             method:'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
